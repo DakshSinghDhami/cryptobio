@@ -354,7 +354,7 @@ export default function Dashboard() {
             <button 
               className={`${styles.saveBtn} ${saved ? styles.savedBtn : ''}`}
               onClick={handleSave}
-              disabled={saving || (payoutAddress && !isValidAddress(payoutAddress))}
+              disabled={saving || (payoutAddress ? !isValidAddress(payoutAddress) : false)}
             >
               {saving ? (
                 <>
