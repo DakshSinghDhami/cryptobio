@@ -1,0 +1,261 @@
+.main {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 520px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  box-shadow: var(--shadow-card);
+  animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card > p {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.connectWrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+
+/* Progress */
+.progress {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 40px;
+}
+
+.progressStep {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg-tertiary);
+  border-radius: 50%;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all 0.3s ease;
+}
+
+.progressStep.active {
+  background: var(--accent-gradient);
+  color: var(--bg-primary);
+}
+
+.progressLine {
+  width: 60px;
+  height: 2px;
+  background: var(--bg-tertiary);
+}
+
+/* Step Content */
+.stepContent h1 {
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: var(--text-secondary);
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+/* Username Input */
+.usernameInput {
+  display: flex;
+  align-items: center;
+  background: var(--bg-tertiary);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.prefix {
+  padding: 14px 0 14px 18px;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.usernameField {
+  flex: 1;
+  padding: 14px 18px 14px 0;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 15px;
+}
+
+.statusChecking {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--text-muted);
+}
+
+.statusAvailable {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--success);
+}
+
+.statusTaken {
+  margin-top: 12px;
+  font-size: 14px;
+  color: var(--error);
+}
+
+/* Form */
+.formGroup {
+  margin-bottom: 20px;
+}
+
+.hint {
+  display: block;
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--text-muted);
+}
+
+/* Tip Amounts */
+.tipAmounts {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.tipAmount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: var(--bg-tertiary);
+  border-radius: var(--radius-md);
+}
+
+.tipLabel {
+  font-weight: 500;
+}
+
+.tipInputWrapper {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-muted);
+}
+
+.tipInput {
+  width: 80px;
+  padding: 8px 12px;
+  background: var(--bg-card);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  outline: none;
+}
+
+.tipInput:focus {
+  border-color: var(--accent-primary);
+}
+
+.feeNote {
+  text-align: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+  padding: 16px;
+  background: rgba(0, 245, 212, 0.05);
+  border-radius: var(--radius-md);
+  margin-bottom: 24px;
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 14px 16px;
+  background: rgba(241, 91, 181, 0.1);
+  border: 1px solid rgba(241, 91, 181, 0.2);
+  border-radius: var(--radius-md);
+  color: var(--error);
+  font-size: 14px;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.error svg {
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* Buttons */
+.buttonRow {
+  display: flex;
+  gap: 12px;
+}
+
+.buttonRow .btn {
+  flex: 1;
+}
+
+@media (max-width: 500px) {
+  .card {
+    padding: 28px 20px;
+  }
+
+  .usernameInput {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .prefix {
+    padding: 12px 16px 0;
+  }
+
+  .usernameField {
+    padding: 8px 16px 12px;
+  }
+
+  .tipAmount {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+}
+
